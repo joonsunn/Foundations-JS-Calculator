@@ -1,0 +1,36 @@
+body{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: Roboto, Arial, Helvetica, sans-serif
+       
+}
+
+.calculator{
+    display:flex;
+    flex-direction:column;
+    margin:100px;
+}
+
+.display{
+    display:flex;
+    justify-content: end;
+}
+
+.below_display{
+    display:flex;
+    flex-direction: row;
+}
+
+.operators{
+    display:flex;
+    flex-direction: column;
+}
+
+.first_row, .second_row, .third_row, .fourth_row{
+    display:flex;
+    flex-direction: row-reverse;
+
+}
