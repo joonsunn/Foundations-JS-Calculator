@@ -239,10 +239,10 @@ function detectPrecision(num){
     cleanNum = num.toString()
     // console.log(`cleanNum = ${cleanNum}`)
     splitStr = cleanNum.split(".")
-    // console.log(`splitStr = ${splitStr}`)
+    console.log(`splitStr = ${splitStr}`)
     console.log(`splitStr[1] = ${splitStr[1]}`)
     if(splitStr.length > 1){
-        if(splitStr.length == 2 && splitStr[1].match(/^[1-9]+$/) == null){
+        if(splitStr.length == 2 && splitStr[1].match(/[1-9]/gm) == null){
             len = 0
         }else{
             len = splitStr[1].length
@@ -270,12 +270,18 @@ function comparePrecision(num1, num2){
 function tidyUpDisplay(number){
 
     numStr = number.toString();
-    numSplit = numStr.split(".")
-    if(numSplit[0].length + numSplit[1].length > 9){
-        truncation = 9 - numSplit[0].length
-        return parseFloat(number).toFixed(truncation)
+    if (numStr.match(/^[.]+$/) != null){
+        numSplit = numStr.split(".")
+        if(numSplit[0].length + numSplit[1].length > 9){
+            truncation = 9 - numSplit[0].length
+            return parseFloat(number).toFixed(truncation)
+        }else{
+            return number
+        }
     }else{
         return number
     }
+
+    
     
 }
