@@ -12,12 +12,26 @@ body{
     display:flex;
     flex-direction:column;
     margin:100px;
+    background-color: grey;
+    padding: 20px;
+    border-radius:5px;
 }
 
 .display{
     display:flex;
     justify-content: end;
+    align-items: stretch;
+    /* background-color: white; */
+    margin-bottom: 20px;
+}
+
+.display span{
+    background-color: white;
+    display:flex;
+    align-self: stretch;
     align-items: center;
+    flex-direction: row-reverse;
+    flex-grow: 1;
 }
 
 .below_display{
@@ -37,11 +51,15 @@ body{
 
 button{
     display:flex;
-    margin: 2px;
-    padding: 5px;
-    width: 30px;
-    height: 30px;
+    margin: 5px;
+    padding: 3px;
+    width: 40px;
+    height: 40px;
     align-items: center;
     justify-content: center;
+    color:white;
+    background-color: black;
+    border-radius: 5px;
+    border-color: orange;
 
 }

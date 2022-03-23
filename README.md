@@ -1,7 +1,11 @@
 # Foundations-JS-Calculator
 
-Task 1: create calculator UI
+DONE Task 1: create calculator UI
 
-Task 2: create logic
+DONE Task 2: create logic
 
-TGask 3: link logic to UI
+DONE Task 3: link logic to UI
+
+DONE Task 4: make UI nicer
+
+Task 5: make UI even nicer

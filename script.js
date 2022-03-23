@@ -170,8 +170,11 @@ function minus(a, b){
 
 function multiply(a, b){
     afterEquals = false;
-    precision = comparePrecision(a, b)
-    return (Number(a) * Number(b)).toFixed(precision)
+    result = (Number(a) * Number(b))
+    // precision = comparePrecision(a, b)
+    precision = detectPrecision(result)
+    return result.toFixed(precision)
+    // return (Number(a) * Number(b)).toFixed(precision)
 }
 
 function divide(a, b){
@@ -254,7 +257,7 @@ function detectPrecision(num){
     console.log(`precision = ${len}`)
     // console.log(`len = ${len}`)
 
-    return len > 9 ? 9 : len
+    return len > 8 ? 8 : len
 }
 
 function comparePrecision(num1, num2){
@@ -272,8 +275,8 @@ function tidyUpDisplay(number){
     numStr = number.toString();
     if (numStr.match(/^[.]+$/) != null){
         numSplit = numStr.split(".")
-        if(numSplit[0].length + numSplit[1].length > 9){
-            truncation = 9 - numSplit[0].length
+        if(numSplit[0].length + numSplit[1].length > 8){
+            truncation = 8 - numSplit[0].length
             return parseFloat(number).toFixed(truncation)
         }else{
             return number
